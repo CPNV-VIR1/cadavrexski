@@ -1,27 +1,26 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <meta charset="UTF-8">
     <title>cadavreXski</title>
-    <link href="assets/css/stylesheet.css" rel="stylesheet">
+    <link href="/assets/css/stylesheet.css" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <script src="assets/js/cadavreXski.js"></script>
+    <script src="/assets/js/cadavreXski.js"></script>
 </head>
 <body class="bg-slate-600 text-white flex items-center justify-center h-screen">
     <header class="text-center">
+        <div class="font-thin justify-end"><span id="btnEn">en</span> / <span id="btnFr">fr</span> / <span id="btnDe">de</span></div>
         <h1 class="text-6xl font-bold">
             CadavreXski !
         </h1>
-        <p class="text-slate-200 font-thin">
-            Made by yannmenoud and lpodev
-        </p>
+        <p id="pAuthors" class="text-slate-200 font-thin"></p>
     <header>
 
     <main class="pb-2">
         <div class="w-full max-w-md mx-auto">
             <div class="rounded px-8 pt-6 pb-8 mb-4 flex flex-col justify-center" id="formPhrase">
                 <div class="mb-4">
-                    <label class="block text-left text-md font-bold mb-2" for="phrase">
+                    <label id="lblPhrase" class="block text-left text-md font-bold mb-2" for="phrase">
                         Phrase
                     </label>
                     <input class="text-black shadow appearance-none border rounded w-full py-2 px-3  leading-tight focus:outline-none focus:shadow-outline" type="text" placeholder="Enter your phrase" id="inPhrase">
@@ -35,7 +34,7 @@
         </div>
         <div class="w-full max-w-sm mx-auto">
             <div class="flex flex-row mb-2">
-                <p class="block text-left text-md font-bold mb-2" for="divPhrases">
+                <p id="lblInsertedPhrases" class="block text-left text-md font-bold mb-2" for="divPhrases">
                     Inserted Phrases
                 </p>
                 <button type="submit" title="This button will reset the Inserted Phrases table." class="ml-auto inline-block text-white bg-slate-500 hover:bg-slate-400 font-bold py-1 px-1 text-xs border-b-4 border-slate-700 hover:slate-blue-500 rounded" type="button" id="btnRefresh">
@@ -49,7 +48,7 @@
     </main>
 
     <footer>
-        <p class="text-slate-200 font-thin">©Copyright 2023 par <a href="https://github.com/CPNV-RIA1/cadavrexski">cadavreXski</a>. Tous droits reversés.</p>
+        <p id="pCopyright" class="text-slate-200 font-thin">©Copyright 2023 by cadavreXski. All rights reserved.</p>
     </footer>
 </body>
 </html>
