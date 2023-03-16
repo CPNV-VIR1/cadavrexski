@@ -1,7 +1,6 @@
-//server.js
 const app = require("./app");
 const port = 8080;
 
 app.listen(port, () => {
-  console.log("Example app listening on port 8080!");
+  console.log("Cadavrexski server listening on port 8080!");
 });
