@@ -2,9 +2,7 @@ document.addEventListener("DOMContentLoaded", function(){
     var inPhrase = document.getElementById("inPhrase");
     var btnSubmitPhrase = document.getElementById("btnSubmitPhrase");
     var btnRefresh = document.getElementById("btnRefresh")
-    var btnEn = document.getElementById("btnEn");
-    var btnFr = document.getElementById("btnFr");
-    var btnDe = document.getElementById("btnDe");
+    var selectLang = document.getElementById("selectLang");
 
     let language = navigator.language || navigator.userLanguage;
     translate(language.substr(0, 2));
@@ -12,16 +10,8 @@ document.addEventListener("DOMContentLoaded", function(){
     inPhrase.focus();
     inPhrase.select();
 
-    btnEn.addEventListener("click", function(){
-        translate("en");
-    });
-
-    btnFr.addEventListener("click", function(){
-        translate("fr");
-    });
-
-    btnDe.addEventListener("click", function(){
-        translate("de");
+    selectLang.addEventListener("change", function(){
+        translate(selectLang.value);
     });
 
     btnSubmitPhrase.addEventListener("click", function(){
