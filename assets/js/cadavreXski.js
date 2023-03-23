@@ -7,6 +7,14 @@ document.addEventListener("DOMContentLoaded", function(){
     let language = navigator.language || navigator.userLanguage;
     translate(language.substr(0, 2));
 
+    // Set selected value according to navigator language
+    for (var i = 0; i < selectLang.options.length; i++) {
+        if (selectLang.options[i].value === language.substr(0, 2)) {
+            selectLang.options[i].selected = true;
+            break;
+        }
+    }
+
     inPhrase.focus();
     inPhrase.select();
 
