@@ -1,7 +1,7 @@
 const { Router } = require("express")
-const { postRoutes } = require("./post.routes")
+const { phraseRoutes } = require("./phrase.routes")
 const router = Router()
-router.use("/posts", postRoutes)
+router.use("/phrases", phraseRoutes)
 
 module.exports = {
     router
