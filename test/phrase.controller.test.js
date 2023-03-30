@@ -6,4 +6,10 @@
  * @version   30-03-2023 - update
  */
 
-let PhraseController = require("../controllers/phrases.controller.js");
+const request = require('supertest')
+const { app } = require('../app')
+
+test("test the root path", async () => {
+    const response = await request(app).get("/api/v1/phrases")
+    expect(response.statusCode).toBe(200)
+  });
