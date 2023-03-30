@@ -15,10 +15,6 @@ The game consists in having several people compose a sentence, or a drawing, wit
 </a>
 
 Made with [contrib.rocks](https://contrib.rocks).
-### Description
-Our app is based on Cadavrexski game. Each player have to write and send their word. 
-At the end all the words are put one after the other and this makes a sentence that 
-makes more or less sense. 
 
 ### Dependencies & Configuration
 We use Express JS to handle routes.
