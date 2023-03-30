@@ -34,8 +34,16 @@ document.addEventListener("DOMContentLoaded", function(){
     })
 })
 
-function addPhrase(phrase){
-    document.getElementById("divPhrases").textContent += phrase + " ";
+function addPhrase(phrases){
+    // redirect to store route with phrase en POST
+    fetch("phrases", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({phrase: phrases})
+    })
+    .catch(err => console.log(err))
 }
 
 function refreshPhrases(){
@@ -43,7 +51,7 @@ function refreshPhrases(){
 }
 
 function translate(lang){
-    var langFile = "assets/lang/" + lang + ".json";
+    var langFile = "/assets/lang/" + lang + ".json";
     var defaultLangFile = "assets/lang/en.json";
     var langData = null;
     var xhr = new XMLHttpRequest();

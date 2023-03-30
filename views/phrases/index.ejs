@@ -46,7 +46,11 @@
                 </button>
             </div>
             <div>
-                <div class="text-left rounded p-4 mb-4 bg-slate-50 text-black overflow-y-auto overflow-x-hidden max-h-32" id="divPhrases"></div>
+                <div class="text-left rounded p-4 mb-4 bg-slate-50 text-black overflow-y-auto overflow-x-hidden max-h-32" id="divPhrases">
+                    <% phrases.forEach(function(phrase) { %>
+                        <%= phrase %>
+                      <% }); %>
+                </div>
             </div>
         </div>
     </main>

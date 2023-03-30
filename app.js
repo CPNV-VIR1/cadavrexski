@@ -4,11 +4,13 @@ const app = express();
 const port = 8080
 const { router } = require("./routes")
 
+app.set('view engine', 'ejs');
 app.use("/assets",express.static(__dirname + "/assets"));
 app.use(express.json())
 app.use("/api/v1", router)
+
 app.get("/", (req, res) => {
-  res.status(200).sendFile(__dirname + "/index.html");
+  res.redirect("/api/v1/phrases")
 });
 
 app.listen(port, () => {
