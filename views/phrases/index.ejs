@@ -24,7 +24,7 @@
 
     <main class="pb-2 w-screen px-2 flex flex-col items-center">
         <div class="w-full max-w-md mx-auto">
-            <div class="rounded pt-6 pb-8 mb-4 flex flex-col items-center" id="formPhrase">
+            <div class="rounded pt-6 pb-8 mb-4 flex flex-col items-center" id="formPhrase" action="/api/v1/phrases/" method="post">
                 <div class="mb-4 w-full">
                     <label id="lblPhrase" class="block text-left text-md font-bold mb-2" for="phrase">
                         Phrase
@@ -46,7 +46,11 @@
                 </button>
             </div>
             <div>
-                <div class="text-left rounded p-4 mb-4 bg-slate-50 text-black overflow-y-auto overflow-x-hidden max-h-32" id="divPhrases"></div>
+                <div class="text-left rounded p-4 mb-4 bg-slate-50 text-black overflow-y-auto overflow-x-hidden max-h-32" id="divPhrases">
+                    <% phrases.forEach(function(phrase) { %>
+                        <%= phrase %>
+                      <% }); %>
+                </div>
             </div>
         </div>
     </main>
