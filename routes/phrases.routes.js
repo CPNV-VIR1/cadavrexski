@@ -5,7 +5,7 @@ const phrasesRoutes = Router()
 
 phrasesRoutes.get('/', index)
 phrasesRoutes.post('/', store)
-phrasesRoutes.delete('/:id', destroy)
+phrasesRoutes.delete('/destroy', destroy)
 
 module.exports = {
     phrasesRoutes

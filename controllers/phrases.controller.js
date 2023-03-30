@@ -14,9 +14,9 @@ const store = (req,res) => {
 }
 
 const destroy = (req,res) => {
-    // delete phrase and redirect to index
-    phrases.splice(req.params.id, 1)
-    res.redirect('/')
+    // delete all phrases and redirect to index
+    phrases = []
+    res.json({phrase: "All phrases deleted"})
 }
 
 module.exports = {
