@@ -43,6 +43,11 @@ function addPhrase(phrases){
         },
         body: JSON.stringify({phrase: phrases})
     })
+    .then(response => response.json())
+    .then(response => {
+        var divPhrases = document.getElementById("divPhrases");
+        divPhrases.textContent += response.phrase + " ";
+    })
     .catch(err => console.log(err))
 }
 

@@ -4,14 +4,13 @@ var phrases = []
 
 const index = (req,res) => {
     // return all phrases and view
-    res.render('phrases/index', {phrases: phrases})
+    res.render('phrases/index', {phrases})
 }
 
 const store = (req,res) => {
     // store phrase and redirect to index
     phrases.push(req.body.phrase)
-    //res.json({message: "Phrase added"})
-    res.redirect('/')
+    res.json({phrase: req.body.phrase})
 }
 
 const destroy = (req,res) => {
