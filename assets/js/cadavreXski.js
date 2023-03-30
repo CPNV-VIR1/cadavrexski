@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", function(){
     })
 
     btnRefresh.addEventListener("click", function(){
-        refreshPhrases();
+        resetPhrases();
     })
 })
 
@@ -43,11 +43,25 @@ function addPhrase(phrases){
         },
         body: JSON.stringify({phrase: phrases})
     })
+    .then(response => response.json())
+    .then(response => {
+        var divPhrases = document.getElementById("divPhrases");
+        divPhrases.textContent += response.phrase + " ";
+    })
     .catch(err => console.log(err))
 }
 
-function refreshPhrases(){
-    document.getElementById("divPhrases").textContent = "";
+function resetPhrases(){
+    // redirect to destroy route
+    fetch("phrases/destroy", {
+        method: "DELETE"
+    })
+    .then(response => response.json())
+    .then(response => {
+        var divPhrases = document.getElementById("divPhrases");
+        divPhrases.textContent = "";
+    })
+    .catch(err => console.log(err))
 }
 
 function translate(lang){
