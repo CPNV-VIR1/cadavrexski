@@ -30,20 +30,42 @@ document.addEventListener("DOMContentLoaded", function(){
     })
 
     btnRefresh.addEventListener("click", function(){
-        refreshPhrases();
+        resetPhrases();
     })
 })
 
-function addPhrase(phrase){
-    document.getElementById("divPhrases").textContent += phrase + " ";
+function addPhrase(phrases){
+    // redirect to store route with phrase en POST
+    fetch("phrases", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({phrase: phrases})
+    })
+    .then(response => response.json())
+    .then(response => {
+        var divPhrases = document.getElementById("divPhrases");
+        divPhrases.textContent += response.phrase + " ";
+    })
+    .catch(err => console.log(err))
 }
 
-function refreshPhrases(){
-    document.getElementById("divPhrases").textContent = "";
+function resetPhrases(){
+    // redirect to destroy route
+    fetch("phrases/destroy", {
+        method: "DELETE"
+    })
+    .then(response => response.json())
+    .then(response => {
+        var divPhrases = document.getElementById("divPhrases");
+        divPhrases.textContent = "";
+    })
+    .catch(err => console.log(err))
 }
 
 function translate(lang){
-    var langFile = "assets/lang/" + lang + ".json";
+    var langFile = "/assets/lang/" + lang + ".json";
     var defaultLangFile = "assets/lang/en.json";
     var langData = null;
     var xhr = new XMLHttpRequest();
