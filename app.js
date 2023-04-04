@@ -1,12 +1,22 @@
-const express = require('express');
-const path = require('path');
+//app.js
+const express = require("express");
 const app = express();
-const port = 8080;
+const port = 8080
+const { router } = require("./routes")
 
-// sendFile will go here
-app.get('/', function(req, res) {
-  res.sendFile(path.join(__dirname + '/index.html'));
+app.set('view engine', 'ejs');
+app.use("/assets",express.static(__dirname + "/assets"));
+app.use(express.json())
+app.use("/api/v1", router)
+
+app.get("/", (req, res) => {
+  res.redirect("/api/v1/phrases")
 });
 
-app.listen(port);
-console.log('Server started at http://localhost:' + port);
+app.listen(port, () => {
+  console.log("Server is running on port" + port )
+})
+
+module.exports = {
+  app
+}
