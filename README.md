@@ -6,12 +6,21 @@ cadavreXski is a WebApp inspired on an old French game called [_cadavre exquis_]
 
 The game consists in having several people compose a sentence, or a drawing, without any of them being able to take into account the previous collaboration or collaborations.
 
-*This project was made during our RIA course (Rich Interface Application).*
+*This project was made during our RIA course (Rich Internet Application).*
 
 ## Dependencies & Configuration
-We use Express JS to handle routes.
+We have used several dependencies to build our project.
 
-To install dependencies, run this command.
+* ejs 3.1.9
+* express 4.18.2
+* test 3.3.0
+
+### Developpment dependencies
+
+* jest 29.5.0
+* supertest 6.3.3
+
+To install all dependencies, run this command.
 ```
 $ npm install 
 ``` 
@@ -23,6 +32,9 @@ node app.js
 ``` 
 
 ## How to run the tests
+```
+npm run test
+``` 
 
 
 ## How to contribute ?
@@ -45,15 +57,21 @@ Finally when your feature is ready, create a pull request.
 │       ├── en.json
 │       └── fr.json
 ├── controllers
-│   └── phrase.controller.js
+│   └── phrases.controller.js
 ├── docs
-│   └── PV_16-03-2023.md
-├── index.html
+│   ├── PV_16-03-2023.md
+│   └── PV_30-03-2023.md
 ├── package-lock.json
 ├── package.json
-└── routes
-    ├── index.js
-    └── phrase.routes.js
+├── routes
+│   ├── index.js
+│   └── phrases.routes.js
+├── test
+│   └── phrase.controller.test.js
+└── views
+    └── phrases
+        └── index.ejs
+        
 ```
 
 ## Authors
