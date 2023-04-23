@@ -19,7 +19,7 @@ test("test the store phrase method", async () => {
   const response = await request(app)
     .post("/api/v1/phrases")
     .send({phrase: 'My test phrase'});
-    expect(response.body).toHaveProperty("phrase", myTestPhrase);
+    expect(response.body).toHaveProperty("phrase", myTestPhrase + "faf");
 });
 
 test("test the destroy all phrases method", async () => { 
